@@ -10,4 +10,5 @@ public class CardapioApplication {
 		SpringApplication.run(CardapioApplication.class, args);
 	}
 
+
 }
