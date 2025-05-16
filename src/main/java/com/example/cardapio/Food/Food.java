@@ -1,12 +1,13 @@
 package com.example.cardapio.Food;
 
 
-import com.example.cardapio.controller.FoodResponseDTO;
+import com.example.cardapio.controller.FoodRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Table(name = "foods")
 @Entity(name = "foods")
@@ -19,6 +20,7 @@ public class Food {
 
     // Atributos para o data base
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter
     private Long id;
 
     private String title;
@@ -27,7 +29,7 @@ public class Food {
 
     private Integer price;
 
-    public Food(FoodResponseDTO data) {
+    public Food(FoodRequestDTO data) {
         this.title = data.title();
         this.image = data.image();
         this.price = data.price();
