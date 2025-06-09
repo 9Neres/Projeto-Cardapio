@@ -2,6 +2,7 @@ package com.example.cardapio.controller;
 
 import com.example.cardapio.Food.Food;
 import com.example.cardapio.Food.FoodRepository;
+import com.example.cardapio.Food.FoodRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +22,7 @@ public class FoodController {
     }
 
     @GetMapping
-    private List<FoodResponseDTO> getAll(){
-
+    public List<FoodResponseDTO> getAll(){
         List<FoodResponseDTO> foodList = repository.findAll().stream().map(FoodResponseDTO :: new).toList();
         return foodList;
     }

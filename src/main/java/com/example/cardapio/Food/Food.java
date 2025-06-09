@@ -1,7 +1,7 @@
 package com.example.cardapio.Food;
 
 
-import com.example.cardapio.controller.FoodRequestDTO;
+import com.example.cardapio.controller.FoodResponseDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -29,7 +29,7 @@ public class Food {
 
     private Integer price;
 
-    public Food(FoodRequestDTO data) {
+    public Food(FoodRequestDTO data){
         this.title = data.title();
         this.image = data.image();
         this.price = data.price();
